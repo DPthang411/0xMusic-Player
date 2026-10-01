@@ -1,0 +1,157 @@
+{
+    sfml = {
+        installdir = [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\s\sfml\3.0.1\c075e8d96f294fbf9334dd8674dac1b4]],
+        __requirestr = "sfml",
+        syslinks = {
+            "ws2_32",
+            "winmm"
+        },
+        __requireconfs = {
+            configs = {
+                audio = true,
+                graphics = false,
+                window = false
+            }
+        },
+        envs = {
+            PATH = {
+                [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\n\ninja\v1.13.1\fd5a0995dca64146a4f4c4dbff879aad\bin]],
+                [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\c\cmake\4.2.3\674adf9609f646bc9f678b5e946b080a\bin]]
+            }
+        },
+        __components_deps = {
+            network = "system",
+            system = "main",
+            audio = "system"
+        },
+        static = true,
+        version = "3.0.1",
+        __components_orderlist = {
+            "audio",
+            "network",
+            "system",
+            "main"
+        },
+        linkdirs = {
+            [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\s\sfml\3.0.1\c075e8d96f294fbf9334dd8674dac1b4\lib]],
+            [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\l\libflac\1.5.0\e232cbabf003472ea6d7f19e16cdc962\lib]],
+            [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\l\libvorbis\1.3.7\c063ebdef68c490cb2df973ade3c2a78\lib]],
+            [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\l\libogg\v1.3.6\f74c396c600d4146919871183ad26617\lib]]
+        },
+        license = "zlib",
+        defines = {
+            "SFML_STATIC",
+            "FLAC__NO_DLL"
+        },
+        sysincludedirs = {
+            [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\s\sfml\3.0.1\c075e8d96f294fbf9334dd8674dac1b4\include]],
+            [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\l\libflac\1.5.0\e232cbabf003472ea6d7f19e16cdc962\include]],
+            [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\l\libvorbis\1.3.7\c063ebdef68c490cb2df973ade3c2a78\include]],
+            [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\l\libogg\v1.3.6\f74c396c600d4146919871183ad26617\include]]
+        },
+        libfiles = {
+            [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\s\sfml\3.0.1\c075e8d96f294fbf9334dd8674dac1b4\lib\libsfml-audio-s.a]],
+            [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\s\sfml\3.0.1\c075e8d96f294fbf9334dd8674dac1b4\lib\libsfml-network-s.a]],
+            [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\s\sfml\3.0.1\c075e8d96f294fbf9334dd8674dac1b4\lib\libsfml-system-s.a]],
+            [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\s\sfml\3.0.1\c075e8d96f294fbf9334dd8674dac1b4\lib\libsfml-main.a]],
+            [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\l\libflac\1.5.0\e232cbabf003472ea6d7f19e16cdc962\lib\libFLAC.a]],
+            [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\l\libvorbis\1.3.7\c063ebdef68c490cb2df973ade3c2a78\lib\libvorbisenc.a]],
+            [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\l\libvorbis\1.3.7\c063ebdef68c490cb2df973ade3c2a78\lib\libvorbisfile.a]],
+            [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\l\libvorbis\1.3.7\c063ebdef68c490cb2df973ade3c2a78\lib\libvorbis.a]],
+            [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\l\libogg\v1.3.6\f74c396c600d4146919871183ad26617\lib\libogg.a]]
+        },
+        __enabled = true,
+        components = {
+            network = {
+                syslinks = "ws2_32",
+                links = "sfml-network-s"
+            },
+            __base = {
+                linkdirs = {
+                    [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\s\sfml\3.0.1\c075e8d96f294fbf9334dd8674dac1b4\lib]],
+                    [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\l\libflac\1.5.0\e232cbabf003472ea6d7f19e16cdc962\lib]],
+                    [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\l\libvorbis\1.3.7\c063ebdef68c490cb2df973ade3c2a78\lib]],
+                    [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\l\libogg\v1.3.6\f74c396c600d4146919871183ad26617\lib]]
+                },
+                defines = {
+                    "SFML_STATIC",
+                    "FLAC__NO_DLL"
+                },
+                sysincludedirs = {
+                    [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\s\sfml\3.0.1\c075e8d96f294fbf9334dd8674dac1b4\include]],
+                    [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\l\libflac\1.5.0\e232cbabf003472ea6d7f19e16cdc962\include]],
+                    [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\l\libvorbis\1.3.7\c063ebdef68c490cb2df973ade3c2a78\include]],
+                    [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\l\libogg\v1.3.6\f74c396c600d4146919871183ad26617\include]]
+                },
+                links = {
+                    "FLAC",
+                    "vorbisenc",
+                    "vorbisfile",
+                    "vorbis",
+                    "ogg"
+                }
+            },
+            system = {
+                syslinks = {
+                    "winmm",
+                    "winmm"
+                },
+                links = "sfml-system-s"
+            },
+            audio = {
+                links = {
+                    "sfml-audio-s",
+                    "flac",
+                    "vorbisenc",
+                    "vorbisfile",
+                    "vorbis",
+                    "ogg"
+                }
+            },
+            main = {
+                links = "sfml-main"
+            }
+        },
+        links = {
+            "sfml-audio-s",
+            "sfml-network-s",
+            "sfml-system-s",
+            "sfml-main",
+            "FLAC",
+            "vorbisenc",
+            "vorbisfile",
+            "vorbis",
+            "ogg"
+        }
+    },
+    taglib = {
+        defines = "TAGLIB_STATIC",
+        envs = {
+            PATH = {
+                [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\n\ninja\v1.13.1\fd5a0995dca64146a4f4c4dbff879aad\bin]],
+                [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\c\cmake\4.2.3\674adf9609f646bc9f678b5e946b080a\bin]]
+            }
+        },
+        installdir = [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\t\taglib\v2.2.1\d03981c72665445f8687bb5aeaa2df45]],
+        static = true,
+        version = "v2.2.1",
+        __requirestr = "taglib",
+        linkdirs = [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\t\taglib\v2.2.1\d03981c72665445f8687bb5aeaa2df45\lib]],
+        license = "LGPL-2.1",
+        sysincludedirs = {
+            [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\t\taglib\v2.2.1\d03981c72665445f8687bb5aeaa2df45\include]],
+            [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\u\utfcpp\v4.0.9\cdc2b2c2b53348b7b101ebf81e86c259\include]],
+            [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\u\utfcpp\v4.0.9\cdc2b2c2b53348b7b101ebf81e86c259\include\utf8cpp]]
+        },
+        libfiles = {
+            [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\t\taglib\v2.2.1\d03981c72665445f8687bb5aeaa2df45\lib\libtag_c.a]],
+            [[C:\Users\JOHNPC\AppData\Local\.xmake\packages\t\taglib\v2.2.1\d03981c72665445f8687bb5aeaa2df45\lib\libtag.a]]
+        },
+        __enabled = true,
+        links = {
+            "tag_c",
+            "tag",
+            "z"
+        }
+    }
+}

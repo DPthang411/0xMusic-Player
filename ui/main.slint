@@ -1,0 +1,281 @@
+import { Slider, ScrollView, Button, HorizontalBox } from "std-widgets.slint";
+
+
+export struct MusicInfo {
+    image: image,
+    name: string,
+    len: float,
+    curr: int,
+}
+
+component SkipButton inherits Rectangle {
+    callback clicked();
+    transform-scale: (touch.has-hover) ? 1.05: 1;
+    animate transform-scale{
+        duration: 100ms;
+        easing: ease-in-out;
+    }
+    Image {
+        width: 50px;
+        height: 50px;
+        source: @image-url("assets/skip_button.png");
+    }
+    touch := TouchArea{
+        clicked => {
+            clicked();
+        }
+    }
+}
+component PlayButton inherits Rectangle {
+    callback clicked();
+    in-out property <bool> pausing;
+    transform-scale: (touch.has-hover) ? 1.05: 1;
+    animate transform-scale{
+        duration: 100ms;
+        easing: ease-in-out;
+    }
+    Image {
+        width: 50px;
+        height: 50px;
+        source: (pausing) ? @image-url("assets/stopping_button.png") : @image-url("assets/playing_button.png");
+    }
+    touch := TouchArea{
+        clicked => {
+            clicked();
+        }
+    }
+}
+
+component MusicEntry inherits Rectangle {
+    in-out property <bool> hovered: touch.has-hover;
+    background: (touch.has-hover) ? darkgrey : rgb(40,40,40);
+    width: 90%;
+    callback entry_clicked();
+    in-out property <image> song_art;
+    in-out property <string> song_name: "";
+    height: 7%;
+    transform-scale: (touch.has-hover) ? 1.05 : 1;
+    animate transform-scale {
+        duration: 100ms;
+        easing: ease-in-out;
+    }
+    HorizontalLayout {
+        padding-left: 5px;
+        padding-right: 5px;
+        cross-axis-alignment: center;
+        alignment: start;
+        Text {
+            text: song_name;
+            font-weight: FontWeight.bold;
+            font-size: 15px;
+            color: white;
+            overflow: elide;
+        }
+    }
+    touch := TouchArea {
+        clicked => {
+            entry_clicked();
+        }
+    }
+}
+component MusicView inherits Rectangle {
+    background: rgb(70,70,70);
+    in-out property <string> song_name: "hlelloda";
+    in-out property <image> song_art;
+    width: 90%;
+    border-radius: 20px;
+    border-width: 10px;
+    callback volume_changed();
+    in-out property <int> volume;
+    border-color: rgb(70,70,70);
+    height: 85%;
+    horizontal-stretch: 0;
+    
+    VerticalLayout {
+        Slider {
+            maximum: 100;
+            value: 100;
+            width: 40%;
+            step: 2;
+            changed(value) => {
+                volume = self.value;
+                volume_changed();
+            }
+        }
+        spacing: 10px;
+        cross-axis-alignment: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        Text {
+            text: song_name;
+            color: white;
+            width: 90%;
+            height: 10%;
+            font-size: 30px;
+            horizontal-alignment: center;
+            font-weight: FontWeight.bold;
+        } 
+        Image {
+            source: song_art;
+            width: 90%;
+            height: 90%;
+        }
+    }
+    
+}
+
+component ControlSection inherits Rectangle {
+    background: rgb(70,70,70);
+    width: 90%;
+    in-out property <float> current_sec;
+    border-radius: 20px;
+    border-width: 10px;
+    in-out property <bool> play_button_pause;
+    in-out property <float> slider_val;
+    callback slider_released();
+    callback pause_clicked();
+    callback skip_clicked();
+    border-color: rgb(70,70,70);
+    height: 15%;
+    in-out property <float> song_len;
+    VerticalLayout {
+        slider := Slider {
+            maximum: song_len;
+            value <=> current_sec;
+            
+            changed(value) => {
+                slider_val = self.value;
+                slider_released();
+            }
+        }
+        HorizontalLayout {
+            alignment: center;
+            PlayButton {
+                horizontal-stretch: 0;
+                pausing <=> play_button_pause;
+                clicked => {
+                    pause_clicked();
+                }
+            }
+            SkipButton {
+                horizontal-stretch: 0;
+                clicked => {
+                    skip_clicked();
+                }
+            }
+        }
+
+    }
+    
+}
+component ShuffleButton inherits Rectangle {
+    background: (touch.has-hover)? darkgrey : rgb(40,40,40);
+    out property <bool> hovered: touch.has-hover;
+    width: 90px;
+    height: 20px;
+    callback shuffle_clicked();
+    HorizontalLayout {
+        alignment: center;
+        cross-axis-alignment: center;
+        Text {
+            width: 90%;
+            height: 70%;
+            vertical-alignment: center;
+            horizontal-alignment: center;
+            text: "Shuffle";
+            color: white;
+            font-weight: FontWeight.bold;
+            font-size: 20px;
+        }
+    }
+    touch := TouchArea {
+        clicked => {
+            shuffle_clicked();
+        }
+    }
+}
+
+export component MainWindow inherits Window {
+    width: 800px;
+    height: 600px;
+    background: rgb(70,70,70);
+    in-out property <int> current_volume: 100;
+    callback skip();
+    in-out property <float> curr_second;
+    in-out property <MusicInfo> current_song;
+    in-out property <[MusicInfo]> song_list;
+    callback entry_clicked();
+    in-out property <bool> shuffle_mode: false;
+    callback slider_drag();
+    in-out property <bool> pause: true;
+    HorizontalLayout {
+        sidePanelScoller := ScrollView {
+            width: 30%;
+            sidePanelContainer := VerticalLayout {
+                width: 100%;
+                height: 100%;
+                spacing: 15px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                cross-axis-alignment: center;
+                ShuffleButton {
+                    background: (shuffle_mode) ? green : (self.hovered) ? darkgrey : rgb(40,40,40);
+                    shuffle_clicked => {
+                        shuffle_mode = !shuffle_mode;
+                    }
+                }
+                for song in song_list: MusicEntry{
+                    width: 90%;
+                    height: 30px;
+                    song_art: song.image;
+                    song_name: song.name;
+                    background: (current_song.name == self.song_name) ? green : (self.hovered) ? darkgrey : rgb(40,40,40);
+                    entry_clicked => {
+                        pause = false;
+                        shuffle_mode = false;
+                        current_song.name = self.song_name;
+                        current_song.image = self.song_art;
+                        entry_clicked();
+                    }
+                }
+            }
+        }
+        
+        mainView := Rectangle{
+            background: rgb(40,40,40);
+            horizontal-stretch: 1;
+            mainViewContainer := VerticalLayout {
+                alignment: start;
+                spacing: 20px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                cross-axis-alignment: center;
+                MusicView {
+                    song_name: current_song.name;
+                    song_art: current_song.image;
+                    volume_changed => {
+                        current_volume = self.volume;
+                    }
+                }
+                ControlSection {
+                    play_button_pause <=> pause;
+                    pause_clicked => {
+                        pause = !pause;
+                        self.play_button_pause = pause;
+                    }
+                    skip_clicked => {
+                        skip();
+                    }
+                    song_len: current_song.len;
+                    current_sec <=> curr_second;
+                    
+                    slider_released => {
+                        curr_second = self.slider_val;
+                        slider_drag();
+                    }
+                }
+            } 
+        }
+        
+    }
+}

@@ -1,0 +1,2 @@
+warning: : target(music_player) maybe is not compatible with license(LGPL-2.1) of package(taglib), 
+we can use shared libraries with LGPL-2.1 or use set_license()/set_policy() to modify/disable license!

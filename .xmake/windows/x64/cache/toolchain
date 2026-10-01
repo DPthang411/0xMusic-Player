@@ -1,0 +1,167 @@
+{
+    gcc_arch_x64_plat_mingw = {
+        plat = "mingw",
+        arch = "x64",
+        __checked = {
+            program = [[D:\pthang\msys64\ucrt64\bin\gcc.exe]],
+            name = "gcc"
+        }
+    },
+    envs_arch_x64_plat_mingw = {
+        plat = "mingw",
+        arch = "x64",
+        __checked = true
+    },
+    ["tool_package_table: 00000000034148A0_mingw_x64_cxx"] = {
+        toolname = "gcc",
+        program = [[D:\pthang\msys64\ucrt64\bin\gcc.exe]],
+        toolchain_info = {
+            plat = "mingw",
+            arch = "x64",
+            cachekey = "gcc_arch_x64_plat_mingw",
+            name = "gcc"
+        }
+    },
+    yasm_arch_x64_plat_windows = {
+        plat = "windows",
+        arch = "x64",
+        __global = true,
+        __checked = true
+    },
+    nim_arch_x64_plat_windows = {
+        plat = "windows",
+        arch = "x64",
+        __global = true,
+        __checked = false
+    },
+    ["tool_package_table: 00000000034148A0_mingw_x64_cc"] = {
+        toolname = "gcc",
+        program = [[D:\pthang\msys64\ucrt64\bin\gcc.exe]],
+        toolchain_info = {
+            plat = "mingw",
+            arch = "x64",
+            cachekey = "gcc_arch_x64_plat_mingw",
+            name = "gcc"
+        }
+    },
+    go_arch_x64_plat_windows = {
+        plat = "windows",
+        arch = "x64",
+        __global = true,
+        __checked = true
+    },
+    gfortran_arch_x64_plat_windows = {
+        plat = "windows",
+        arch = "x64",
+        __global = true,
+        __checked = true
+    },
+    nasm_arch_x64_plat_windows = {
+        plat = "windows",
+        arch = "x64",
+        __global = true,
+        __checked = true
+    },
+    swift_arch_x64_plat_windows = {
+        plat = "windows",
+        arch = "x64",
+        __global = true,
+        __checked = true
+    },
+    clang_arch_x64_plat_windows = {
+        plat = "windows",
+        arch = "x64",
+        __global = true,
+        __checked = false
+    },
+    ["tool_package_table: 00000000034148A0_mingw_x64_ld"] = {
+        toolname = "gxx",
+        program = [[D:\pthang\msys64\ucrt64\bin\g++.exe]],
+        toolchain_info = {
+            plat = "mingw",
+            arch = "x64",
+            cachekey = "gcc_arch_x64_plat_mingw",
+            name = "gcc"
+        }
+    },
+    zig_arch_x64_plat_windows = {
+        plat = "windows",
+        arch = "x64",
+        __global = true,
+        __checked = false
+    },
+    tool_target_music_player_mingw_x64_sh = {
+        toolname = "gxx",
+        program = [[D:\pthang\msys64\ucrt64\bin\g++.exe]],
+        toolchain_info = {
+            plat = "mingw",
+            arch = "x64",
+            cachekey = "gcc_arch_x64_plat_mingw",
+            name = "gcc"
+        }
+    },
+    nasm_arch_x64_plat_mingw = {
+        plat = "mingw",
+        arch = "x64",
+        __checked = true
+    },
+    rust_arch_x64_plat_windows = {
+        plat = "windows",
+        arch = "x64",
+        __global = true,
+        __checked = true
+    },
+    cuda_arch_x64_plat_windows = {
+        plat = "windows",
+        arch = "x64",
+        __global = true,
+        __checked = true
+    },
+    yasm_arch_x64_plat_mingw = {
+        plat = "mingw",
+        arch = "x64",
+        __checked = true
+    },
+    tool_target_music_player_mingw_x64_ld = {
+        toolname = "gxx",
+        program = [[D:\pthang\msys64\ucrt64\bin\g++.exe]],
+        toolchain_info = {
+            plat = "mingw",
+            arch = "x64",
+            cachekey = "gcc_arch_x64_plat_mingw",
+            name = "gcc"
+        }
+    },
+    tool_target_music_player_mingw_x64_cxx = {
+        toolname = "gcc",
+        program = [[D:\pthang\msys64\ucrt64\bin\gcc.exe]],
+        toolchain_info = {
+            plat = "mingw",
+            arch = "x64",
+            cachekey = "gcc_arch_x64_plat_mingw",
+            name = "gcc"
+        }
+    },
+    fpc_arch_x64_plat_windows = {
+        plat = "windows",
+        arch = "x64",
+        __global = true,
+        __checked = true
+    },
+    go_arch_x64_plat_mingw = {
+        plat = "mingw",
+        arch = "x64",
+        __checked = true
+    },
+    fasm_arch_x64_plat_mingw = {
+        plat = "mingw",
+        arch = "x64",
+        __checked = true
+    },
+    msvc_arch_x64_plat_windows = {
+        plat = "windows",
+        arch = "x64",
+        __global = true,
+        __checked = false
+    }
+}

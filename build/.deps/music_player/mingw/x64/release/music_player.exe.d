@@ -1,0 +1,34 @@
+{
+    files = {
+        [[build\.objs\music_player\mingw\x64\release\src\main.cpp.obj]]
+    },
+    values = {
+        [[D:\pthang\msys64\ucrt64\bin\g++.exe]],
+        {
+            "-m64",
+            [[-LD:\pthang\msys64\ucrt64\lib]],
+            [[-LC:\Users\JOHNPC\AppData\Local\.xmake\packages\s\sfml\3.0.1\c075e8d96f294fbf9334dd8674dac1b4\lib]],
+            [[-LC:\Users\JOHNPC\AppData\Local\.xmake\packages\l\libflac\1.5.0\e232cbabf003472ea6d7f19e16cdc962\lib]],
+            [[-LC:\Users\JOHNPC\AppData\Local\.xmake\packages\l\libvorbis\1.3.7\c063ebdef68c490cb2df973ade3c2a78\lib]],
+            [[-LC:\Users\JOHNPC\AppData\Local\.xmake\packages\l\libogg\v1.3.6\f74c396c600d4146919871183ad26617\lib]],
+            [[-LC:\Users\JOHNPC\AppData\Local\.xmake\packages\t\taglib\v2.2.1\d03981c72665445f8687bb5aeaa2df45\lib]],
+            "-s",
+            "-lslint_cpp",
+            "-lsfml-audio-s",
+            "-lsfml-network-s",
+            "-lsfml-system-s",
+            "-lsfml-main",
+            "-lFLAC",
+            "-lvorbisenc",
+            "-lvorbisfile",
+            "-lvorbis",
+            "-logg",
+            "-ltag_c",
+            "-ltag",
+            "-lz",
+            "-lole32",
+            "-lws2_32",
+            "-lwinmm"
+        }
+    }
+}
