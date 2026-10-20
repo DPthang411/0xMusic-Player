@@ -178,16 +178,14 @@ int main(){
                 timestamps.SetStart(track_start_time);
                 timestamps.SetEnd(track_end_time);
                 activity.SetTimestamps(timestamps);
-                if (state_changed || song_changed){
-                    if (musicMap[std::string(current_song.name)]->getStatus() == sf::SoundSource::Status::Playing){
-                        client->UpdateRichPresence(activity, [](discordpp::ClientResult result){}); 
-                    }
-                    else{
-                        client->ClearRichPresence();
-                    }
-                    state_changed = false;
-                    song_changed = false;
+                if (musicMap[std::string(current_song.name)]->getStatus() == sf::SoundSource::Status::Playing){
+                    client->UpdateRichPresence(activity, [](discordpp::ClientResult result){}); 
                 }
+                else{
+                    client->ClearRichPresence();
+                }
+                state_changed = false;
+                song_changed = false;
             }
             
             std::this_thread::sleep_for(std::chrono::milliseconds(1000));
